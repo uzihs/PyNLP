@@ -1,0 +1,4 @@
+#created by Uzi
+source venv_PyNLP/bin/activate
+easy_install readline #has to be done with easy_install, so iPython works properly
+pip install -r requirements.txt

@@ -1,0 +1,6 @@
+PyYAML==3.10
+distribute==0.6.24
+ipython==0.12
+nltk==2.0.1rc4
+readline==6.2.2
+wsgiref==0.1.2
