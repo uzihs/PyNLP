@@ -1,4 +1,3 @@
-
 from nltk.book import *
 
 print "concordance:"
