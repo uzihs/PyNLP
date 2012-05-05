@@ -5,10 +5,13 @@ raw = """DENNIS: Listen, strange women lying in ponds distributing swords
  is no basis for a system of government.  Supreme executive power derives from
  a mandate from the masses, not from some farcical aquatic ceremony."""
 tokens = nltk.word_tokenize(raw)
+print tokens
 porter = nltk.PorterStemmer()
+print porter
 lancaster = nltk.LancasterStemmer()
-[porter.stem(t) for t in tokens]
-[lancaster.stem(t) for t in tokens]
+print lancaster
+print [porter.stem(t) for t in tokens]
+print [lancaster.stem(t) for t in tokens]
 
  	
 class IndexedText(object):
@@ -34,9 +37,9 @@ class IndexedText(object):
     
 grail = nltk.corpus.webtext.words('grail.txt')
 text = IndexedText(porter, grail)
-text.concordance('lie')
+#text.concordance('lie')
 
 
 wnl = nltk.WordNetLemmatizer()
-[wnl.lemmatize(t) for t in tokens]
+print [wnl.lemmatize(t) for t in tokens]
 

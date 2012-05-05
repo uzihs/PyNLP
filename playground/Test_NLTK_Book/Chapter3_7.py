@@ -4,9 +4,9 @@ raw = """'When I'M a Duchess,' she said to herself, (not in a very hopeful tone
 though), 'I won't have any pepper in my kitchen AT ALL. Soup does very
 well without--Maybe it's always pepper that makes people hot-tempered,'..."""
 
-raw.split()
+print raw.split()
 
-re.split(r'\W+', raw)
+print re.split(r'\W+', raw)
 
 print re.findall(r"\w+(?:[-']\w+)*|'|[-.(]+|\S\w*", raw)
 
@@ -20,4 +20,4 @@ pattern = r'''(?x)    # set flag to allow verbose regexps
    | \.\.\.            # ellipsis
    | [][.,;"'?():-_`]  # these are separate tokens
  '''
-nltk.regexp_tokenize(text, pattern)
+print nltk.regexp_tokenize(text, pattern)

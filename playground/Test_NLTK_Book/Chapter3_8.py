@@ -1,7 +1,7 @@
-import nltk, re, pprint
 from __future__ import division
+import nltk, re, pprint
 
-len(nltk.corpus.brown.words()) / len(nltk.corpus.brown.sents())
+print len(nltk.corpus.brown.words()) / len(nltk.corpus.brown.sents())
 
 
 sent_tokenizer=nltk.data.load('tokenizers/punkt/english.pickle')
