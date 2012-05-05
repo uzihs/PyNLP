@@ -1,20 +1,23 @@
-text = nltk.work_tokenize("How are you doing, Sir?")
-nltk.pos_tag(text)
+import nltk
 
-nltk.help.upenn_tagset('RB')
-nltk.help.upenn_tagset('NN.*')
-nltk.help.upenn_tagset('.*')
+#text = nltk.work_tokenize("How are you doing, Sir?")
+#print nltk.pos_tag(text)
+
+print nltk.help.upenn_tagset('RB')
+print nltk.help.upenn_tagset('NN.*')
+print nltk.help.upenn_tagset('.*')
 
 # below 2 meaning to refuse
 text = nltk.word_tokenize("They refuse to permit us to obtain the refuse permit")
-nltk.pos_tag(text)
+print nltk.pos_tag(text)
 
 
 text = nltk.Text(word.lower() for word in nltk.corpus.brown.words())
-text.similar('woman')
-text.similar('the')
+print text.similar('woman')
+print text.similar('the')
 
 tagged_token = nltk.tag.str2tuple('fly/NN')
+print tagged_token
 
 sent = '''
  The/AT grand/JJ jury/NN commented/VBD on/IN a/AT number/NN of/IN
@@ -24,16 +27,16 @@ sent = '''
  accepted/VBN practices/NNS which/WDT inure/VB to/IN the/AT best/JJT
  interest/NN of/IN both/ABX governments/NNS ''/'' ./.
  '''
-[nltk.tag.str2tuple(t) for t in sent.split()]
+print [nltk.tag.str2tuple(t) for t in sent.split()]
 
-nltk.corpus.brown.tagged_words()[1:30]
-nltk.corpus.brown.tagged_words(simplify_tags=True)[1:30]
+print nltk.corpus.brown.tagged_words()[1:30]
+print nltk.corpus.brown.tagged_words(simplify_tags=True)[1:30]
 
 
 from nltk.corpus import brown
 brown_news_tagged = brown.tagged_words(categories='news', simplify_tags=True)
 tag_fd = nltk.FreqDist(tag for (word, tag) in brown_news_tagged)
-tag_fd.keys()
+print tag_fd.keys()
 
 #try "the ADJ man" in Brown Simplified
 nltk.app.concordance()
@@ -41,14 +44,15 @@ nltk.app.concordance()
 
 wsj = nltk.corpus.treebank.tagged_words(simplify_tags=True)
 word_tag_fd = nltk.FreqDist(wsj)
-[word + "/" + tag for (word, tag) in word_tag_fd if tag.startswith('V')]
+print word_tag_fd
+print [word + "/" + tag for (word, tag) in word_tag_fd if tag.startswith('V')]
 
 
 cfd1 = nltk.ConditionalFreqDist(wsj)
-cfd1['cut'].keys()
+print cfd1['cut'].keys()
 
 
 cfd2 = nltk.ConditionalFreqDist((tag, word) for (word, tag) in wsj)
-cfd2['VN'].keys()
+print cfd2['VN'].keys()
 
                                        
