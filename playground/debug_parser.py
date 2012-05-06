@@ -1,5 +1,6 @@
 import nltk
 
+
 grammar = nltk.parse_pcfg("""
     S    -> NP VP              [1.0]
     VP   -> TV NP              [0.4]

@@ -1,4 +1,5 @@
 #http://www.nltk.org/getting-started
+#sudo python -m nltk.downloader -d /usr/share/nltk_data all
 
 #recursive descent parser (top down_ demo:
 nltk.app.rdparser()

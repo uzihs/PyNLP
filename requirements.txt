@@ -1,12 +1,18 @@
 #too many problems with virtualenv (and Tkinter)
 
+#Tkinter:
+sudo port install py27-tkinter
+
 #for iPython:
 #   easy_install readline #has to be done with easy_install, so iPython works properly
 
 #for NTLK:
 #  sudo port install  py27-numpy py27-matplotlib
 
-#you can run this (to install the libs below): pip install -r requirements.txt
+#you can run this (to install the libs below): sudo pip install -r requirements.txt
+
+#NLTK data:
+sudo python -m nltk.downloader -d /usr/share/nltk_data all
 
 
 PyYAML==3.10
